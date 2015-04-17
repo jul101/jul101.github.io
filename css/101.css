@@ -6,7 +6,7 @@
     right: auto;
     z-index: 9;
     width: 100%;
-    /*min-height: 60px;*/
+    min-height: 60px;
     padding: 0;
     background: rgba(255,255,255,0.75);
     box-shadow: 0 1px 4px rgba(228, 228, 228, 0.75);
@@ -21,16 +21,6 @@ div {
     display: block;
 }
 
-::selection {
-    color: #fff;
-    background: #e6400c;
-}
-
-.site-logo {
-    float: left;
-    padding-top: 19px;
-}
-
 a, a:focus, a:hover, a:active {
     /*color: #e6400c;*/
 
@@ -38,34 +28,35 @@ a, a:focus, a:hover, a:active {
     text-decoration: none;
 }
 
-li a{
-    color: indigo;
+div#navbar ul.nav li a,
+body > nav > div > div.navbar-header > a.navbar-brand{
+    color: plum;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     /*font-family: 'Lato', sans-serif;*/
 }
 
-li a:hover {
-    color: #e6400c;
+div#navbar ul.nav li a:focus,
+div#navbar ul.nav li a:hover,
+div#navbar ul.nav li a:active {
+    color: #ffffff;
+    outline: 0;
+    text-decoration: none;
 }
 
-
-.header-navigation li {
-    float: left;
-    padding: 0;
-    margin: 10px 5px 10px 5px;
-}
-.header-navigation li a{
-    border-bottom-style: solid;
-    border-bottom-width: thin;
-}
-
-.header-navigation {
+#navbar > ul{
     float: right;
-    list-style: none;
-    padding: 5px;
-    margin: 0;
-    font-size: 18px;
-    /*font: 400 18px "PT Sans Narrow", Arial, sans-serif;*/
-    /*text-transform: uppercase;*/
+}
+
+.container{
+    color: #ffffff;
+}
+
+div#about{
+    margin-top: 60px;
+}
+
+/*override*/
+.jumbotron,.thumbnail{
+    background: rgba(255,255,255,0.75);
 }
