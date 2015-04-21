@@ -5,12 +5,15 @@
 	<title>Doris Wedding Portfolio</title>
 	<link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../js/bootstrap/css/bootstrap-theme.min.css">
+	<link href="./js/isotope/isotope.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./css/doris.css">
 </head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="//d3js.org/queue.v1.min.js"></script>
 <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+<script src="./js/isotope/isotope.pkgd.js"></script>
 <script type="text/javascript" src="./js/doris.js"></script>
 
 <body>
@@ -55,6 +58,158 @@
 		</a>
 	</header>
 
+	<div class="row">
+		<div class="col-md-12 no-padding">
+			<!-- Filter -->
+			<ul class="folio-filter" data-option-key="filter">
+				<li><a class="selected" href="#filter" data-option-value="*">All</a></li>
+				<li><a href="#filter" data-option-value=".web">Web</a></li>
+				<li><a href="#filter" data-option-value=".illustrations">Illustrations</a></li>
+				<li><a href="#filter" data-option-value=".print">Print</a></li>
+				<li><a href="#filter" data-option-value=".branding">Branding</a></li>
+				<li><a href="#filter" data-option-value=".packaging">Packaging</a></li>
+			</ul>
+		</div>
+		<!-- Works Content -->
+		<div class="col-md-12 no-padding">
+			<div class="portfolio-grid">
+				<div id="folio" class="isotope" style="position: relative; overflow: hidden; height: 620px;">
+					<div id="da-thumbs" class="da-thumbs">
+						<div class="folio-item isotope-item web packaging" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+							<a href="./images/bride-1.jpg" class="prettyPhoto">
+								<div class="folio-thumb">
+									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
+								</div>
+							</a>
+							<div class="folio-overlay">
+								<h4><a href="#">Project Title</a></h4>
+							</div>
+							<i class="icon-uni17D"></i>
+						</div>
+
+						<div class="folio-item isotope-item illustrations" style="position: absolute; left: 0px; top: 0px; transform: translate3d(467px, 0px, 0px);">
+							<a href="./images/bride-2.jpg" class="prettyPhoto">
+								<div class="folio-thumb">
+									<img src="./images/bride-2.jpg" class="img-responsive" alt="">
+								</div>
+							</a>
+							<div class="folio-overlay">
+								<h4><a href="#">Project Title</a></h4>
+							</div>
+							<i class="icon-uni17D"></i>
+						</div>
+
+						<div class="folio-item isotope-item web print" style="position: absolute; left: 0px; top: 0px; transform: translate3d(934px, 0px, 0px);">
+							<a href="./images/bride-1.jpg" class="prettyPhoto">
+								<div class="folio-thumb">
+									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
+								</div>
+							</a>
+							<div class="folio-overlay">
+								<h4><a href="#">Project Title</a></h4>
+							</div>
+							<i class="icon-uni17D"></i>
+						</div>
+
+						<div class="folio-item isotope-item illustrations" style="position: absolute; left: 0px; top: 0px; transform: translate3d(1401px, 0px, 0px);">
+							<a href="./images/bride-1.jpg" class="prettyPhoto">
+								<div class="folio-thumb">
+									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
+								</div>
+							</a>
+							<div class="folio-overlay">
+								<h4><a href="#">Project Title</a></h4>
+							</div>
+							<i class="icon-uni17D"></i>
+						</div>
+
+						<div class="folio-item isotope-item print branding" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 310px, 0px);">
+							<a href="./images/bride-1.jpg" class="prettyPhoto">
+								<div class="folio-thumb">
+									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
+								</div>
+							</a>
+							<div class="folio-overlay">
+								<h4><a href="#">Project Title</a></h4>
+							</div>
+							<i class="icon-uni17D"></i>
+						</div>
+
+						<div class="folio-item isotope-item branding" style="position: absolute; left: 0px; top: 0px; transform: translate3d(467px, 310px, 0px);">
+							<a href="./images/bride-1.jpg" class="prettyPhoto">
+								<div class="folio-thumb">
+									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
+								</div>
+							</a>
+							<div class="folio-overlay">
+								<h4><a href="#">Project Title</a></h4>
+							</div>
+							<i class="icon-uni17D"></i>
+						</div>
+
+						<div class="folio-item isotope-item packaging" style="position: absolute; left: 0px; top: 0px; transform: translate3d(934px, 310px, 0px);">
+							<a href="./images/bride-1.jpg" class="prettyPhoto">
+								<div class="folio-thumb">
+									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
+								</div>
+							</a>
+							<div class="folio-overlay">
+								<h4><a href="#">Project Title</a></h4>
+							</div>
+							<i class="icon-uni17D"></i>
+						</div>
+
+						<div class="folio-item isotope-item branding" style="position: absolute; left: 0px; top: 0px; transform: translate3d(1401px, 310px, 0px);">
+							<a href="./images/bride-1.jpg" class="prettyPhoto">
+								<div class="folio-thumb">
+									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
+								</div>
+							</a>
+							<div class="folio-overlay">
+								<h4><a href="#">Project Title</a></h4>
+							</div>
+							<i class="icon-uni17D"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--<div class="row">-->
+	<!--<div class="col-md-12 no-padding">-->
+		<!--<div class="portfolio-grid">-->
+			<!--<div id="folio" class="isotope">-->
+				<!--<div id="da-thumbs" class="da-thumbs">-->
+				<!--<div class="folio-item isotope-item web packaging">-->
+					<!--<a href="images/projects/1/1.jpg" class="prettyPhoto">-->
+						<!--<div class="folio-thumb">-->
+							<!--<img src="./images/bride-1.jpg" class="img-responsive" alt=""/>-->
+						<!--</div>-->
+					<!--</a>-->
+					<!--<div class="folio-overlay">-->
+						<!--<h4><a href="#">Project Title</a></h4>-->
+					<!--</div>-->
+					<!--<i class="icon-uni17D"></i>-->
+				<!--</div>-->
+				<!--<div id="da-thumbs" class="da-thumbs">-->
+				<!--<div class="folio-item isotope-item web packaging">-->
+					<!--<a href="images/projects/1/1.jpg" class="prettyPhoto">-->
+						<!--<div class="folio-thumb">-->
+							<!--<img src="./images/bride-1.jpg" class="img-responsive" alt=""/>-->
+						<!--</div>-->
+					<!--</a>-->
+					<!--<div class="folio-overlay">-->
+						<!--<h4><a href="#">Project Title</a></h4>-->
+					<!--</div>-->
+					<!--<i class="icon-uni17D"></i>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+<!--</div>-->
 	<script type="text/javascript">
 
 	</script>

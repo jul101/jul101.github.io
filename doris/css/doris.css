@@ -91,3 +91,56 @@ footer {
         height: 70%;
     }
 }
+
+/*圖片集合CSS*/
+.folio-item:hover .folio-thumb img {
+    transform: scale(1.15);
+    transition: .7s;
+    opacity: 0.6;
+}
+
+.folio-item .folio-thumb img {
+    transform: scale(1.01);
+    transition: .5s;
+    opacity: 1;
+    width: 100%;
+}
+
+.folio-item {
+    overflow: hidden;
+    background: #000;
+}
+
+.folio-item {
+    width: 25%;
+    margin: 0 0 -1px;
+    border: 0;
+    padding: 0;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.folio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0px;
+    opacity: 0;
+    transition: .4s;
+}
+
+.folio-overlay h4 {
+    margin: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+    background: #000;
+    padding: 10px 15px;
+    line-height: 17px;
+    position: relative;
+    top: 50px;
+    transition: .4s;
+}
