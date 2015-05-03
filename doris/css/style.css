@@ -788,7 +788,7 @@ a:focus {
 }
 
 .folio-item {
-    width: 25%;
+    /*width: 25%;*/
     margin: 0 0 -1px;
     border: 0;
     padding: 0;
@@ -843,18 +843,18 @@ a:focus {
     background: #000;
 }
 
-.folio-item .folio-thumb img {
-    transform: scale(1.01);
-    transition: .5s;
-    opacity: 1;
-    width: 100%;
-}
+/*.folio-item .folio-thumb img {*/
+    /*transform: scale(1.01);*/
+    /*transition: .5s;*/
+    /*opacity: 1;*/
+    /*width: 100%;*/
+/*}*/
 
-.folio-item:hover .folio-thumb img {
-    transform: scale(1.15);
-    transition: .7s;
-    opacity: 0.6;
-}
+/*.folio-item:hover .folio-thumb img {*/
+    /*transform: scale(1.15);*/
+    /*transition: .7s;*/
+    /*opacity: 0.6;*/
+/*}*/
 
 .folio-item:hover .folio-overlay {
     position: absolute;

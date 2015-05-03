@@ -11,9 +11,9 @@ body {
     height: 100%;
 }
 
-body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
+/*body {*/
+    /*padding-top: 50px; /!* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. *!/*/
+/*}*/
 
 .img-portfolio {
     margin-bottom: 30px;
@@ -111,12 +111,12 @@ footer {
     background: #000;
 }
 
-.folio-item {
-    width: 25%;
-    margin: 0 0 -1px;
-    border: 0;
-    padding: 0;
-}
+/*.folio-item {*/
+    /*width: 25%;*/
+    /*margin: 0 0 -1px;*/
+    /*border: 0;*/
+    /*padding: 0;*/
+/*}*/
 
 .no-padding {
     padding: 0 !important;
@@ -143,4 +143,41 @@ footer {
     position: relative;
     top: 50px;
     transition: .4s;
+}
+
+.title-menu{
+    color: white;
+    /*background-color: #2aabd2;*/
+    position: absolute;
+    /* height: 100px; */
+    z-index: 999;
+    margin-left: 10%;
+    /* margin-right: 10%; */
+    width: 80%;
+}
+
+div.header.fixNav {
+    position: fixed;
+    top: 0;
+    bottom: auto;
+    background: rgba(100,100,100,0.70);
+    width: 100%;
+    margin: auto;
+}
+
+#navbar > ul{
+    float: right;
+}
+
+body > div.title-menu > div > div.navbar-header > a
+,#navbar > ul > li.active > a
+,#navbar > ul > li > a
+{
+    color: white;
+}
+
+#navbar > ul > li.active > a:hover
+,#navbar > ul > li > a:hover
+{
+    color: black;
 }

@@ -14,202 +14,111 @@
 <script src="//d3js.org/queue.v1.min.js"></script>
 <script src="../js/bootstrap/js/bootstrap.min.js"></script>
 <script src="./js/isotope/isotope.pkgd.js"></script>
+<script type="text/javascript" src="./js/jquery.scrollTo.min.js"></script>
 <script type="text/javascript" src="./js/doris.js"></script>
 
 <body>
-	Hello I am Index Of Doris Wedding Portfolio!!
+<!--<div class="container">-->
+	<!--&lt;!&ndash;<div class="jumbotron">&ndash;&gt;-->
+		<!--&lt;!&ndash;<h1>Doris 時尚彩妝整理造型</h1>&ndash;&gt;-->
+		<!--&lt;!&ndash;<p>Hello I am Index Of Doris Wedding Portfolio!!</p>&ndash;&gt;-->
+	<!--&lt;!&ndash;</div>&ndash;&gt;-->
+	<!--&lt;!&ndash;<p>This is some text.</p>&ndash;&gt;-->
+	<!--&lt;!&ndash;<p>This is another text.</p>&ndash;&gt;-->
 
-	<header id="myCarousel" class="carousel slide">
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-			<li data-target="#myCarousel" data-slide-to="2"></li>
-		</ol>
-
-		<!-- Wrapper for slides -->
-		<div class="carousel-inner">
-			<div class="item active">
-				<div class="fill" style="background-image:url('./images/bf-1.jpg');"></div>
-				<div class="carousel-caption">
-					<h2>Caption 1</h2>
-				</div>
-			</div>
-			<div class="item">
-				<div class="fill" style="background-image:url('./images/bf-2.jpg');"></div>
-				<div class="carousel-caption">
-					<h2>Caption 2</h2>
-				</div>
-			</div>
-			<div class="item">
-				<div class="fill" style="background-image:url('./images/bf-3.jpg');"></div>
-				<div class="carousel-caption">
-					<h2>Caption 3</h2>
-				</div>
-			</div>
+<div class="title-menu header">
+	<div class="container">
+		<div class="navbar-header">
+			<!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">-->
+				<!--<span class="sr-only">Toggle navigation</span>-->
+				<!--<span class="icon-bar"></span>-->
+				<!--<span class="icon-bar"></span>-->
+				<!--<span class="icon-bar"></span>-->
+			<!--</button>-->
+			<a class="navbar-brand" href="#">Doris 時尚彩妝整理造型</a>
 		</div>
-
-		<!-- Controls -->
-		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-			<span class="icon-prev"></span>
-		</a>
-		<a class="right carousel-control" href="#myCarousel" data-slide="next">
-			<span class="icon-next"></span>
-		</a>
-	</header>
-
-	<div class="row">
-		<div class="col-md-12 no-padding">
-			<!-- Filter -->
-			<ul class="folio-filter" data-option-key="filter">
-				<li><a class="selected" href="#filter" data-option-value="*">All</a></li>
-				<li><a href="#filter" data-option-value=".web">Web</a></li>
-				<li><a href="#filter" data-option-value=".illustrations">Illustrations</a></li>
-				<li><a href="#filter" data-option-value=".print">Print</a></li>
-				<li><a href="#filter" data-option-value=".branding">Branding</a></li>
-				<li><a href="#filter" data-option-value=".packaging">Packaging</a></li>
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#myCarousel">About</a></li>
+				<li><a href="#folio">About</a></li>
+				<li><a href="#contact">Contact</a></li>
 			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<!--</div>-->
+
+<header id="myCarousel" class="carousel slide">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
+		<div class="item active">
+			<div class="fill" style="background-image:url('./images/bf-1.jpg');"></div>
+			<div class="carousel-caption">
+				<h2>Caption 1</h2>
+			</div>
 		</div>
-		<!-- Works Content -->
-		<div class="col-md-12 no-padding">
-			<div class="portfolio-grid">
-				<div id="folio" class="isotope" style="position: relative; overflow: hidden; height: 620px;">
-					<div id="da-thumbs" class="da-thumbs">
-						<div class="folio-item isotope-item web packaging" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
-							<a href="./images/bride-1.jpg" class="prettyPhoto">
-								<div class="folio-thumb">
-									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
-								</div>
-							</a>
-							<div class="folio-overlay">
-								<h4><a href="#">Project Title</a></h4>
-							</div>
-							<i class="icon-uni17D"></i>
-						</div>
+		<div class="item">
+			<div class="fill" style="background-image:url('./images/bf-2.jpg');"></div>
+			<div class="carousel-caption">
+				<h2>Caption 2</h2>
+			</div>
+		</div>
+		<div class="item">
+			<div class="fill" style="background-image:url('./images/bf-3.jpg');"></div>
+			<div class="carousel-caption">
+				<h2>Caption 3</h2>
+			</div>
+		</div>
+	</div>
 
-						<div class="folio-item isotope-item illustrations" style="position: absolute; left: 0px; top: 0px; transform: translate3d(467px, 0px, 0px);">
-							<a href="./images/bride-2.jpg" class="prettyPhoto">
-								<div class="folio-thumb">
-									<img src="./images/bride-2.jpg" class="img-responsive" alt="">
-								</div>
-							</a>
-							<div class="folio-overlay">
-								<h4><a href="#">Project Title</a></h4>
-							</div>
-							<i class="icon-uni17D"></i>
-						</div>
+	<!-- Controls -->
+	<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		<span class="icon-prev"></span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" data-slide="next">
+		<span class="icon-next"></span>
+	</a>
+</header>
 
-						<div class="folio-item isotope-item web print" style="position: absolute; left: 0px; top: 0px; transform: translate3d(934px, 0px, 0px);">
-							<a href="./images/bride-1.jpg" class="prettyPhoto">
-								<div class="folio-thumb">
-									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
-								</div>
-							</a>
-							<div class="folio-overlay">
-								<h4><a href="#">Project Title</a></h4>
-							</div>
-							<i class="icon-uni17D"></i>
-						</div>
 
-						<div class="folio-item isotope-item illustrations" style="position: absolute; left: 0px; top: 0px; transform: translate3d(1401px, 0px, 0px);">
-							<a href="./images/bride-1.jpg" class="prettyPhoto">
-								<div class="folio-thumb">
-									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
-								</div>
-							</a>
-							<div class="folio-overlay">
-								<h4><a href="#">Project Title</a></h4>
-							</div>
-							<i class="icon-uni17D"></i>
-						</div>
 
-						<div class="folio-item isotope-item print branding" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 310px, 0px);">
-							<a href="./images/bride-1.jpg" class="prettyPhoto">
-								<div class="folio-thumb">
-									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
-								</div>
-							</a>
-							<div class="folio-overlay">
-								<h4><a href="#">Project Title</a></h4>
-							</div>
-							<i class="icon-uni17D"></i>
-						</div>
 
-						<div class="folio-item isotope-item branding" style="position: absolute; left: 0px; top: 0px; transform: translate3d(467px, 310px, 0px);">
-							<a href="./images/bride-1.jpg" class="prettyPhoto">
-								<div class="folio-thumb">
-									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
-								</div>
-							</a>
-							<div class="folio-overlay">
-								<h4><a href="#">Project Title</a></h4>
-							</div>
-							<i class="icon-uni17D"></i>
-						</div>
+	<div class="portfolio-container">
 
-						<div class="folio-item isotope-item packaging" style="position: absolute; left: 0px; top: 0px; transform: translate3d(934px, 310px, 0px);">
-							<a href="./images/bride-1.jpg" class="prettyPhoto">
-								<div class="folio-thumb">
-									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
-								</div>
-							</a>
-							<div class="folio-overlay">
-								<h4><a href="#">Project Title</a></h4>
-							</div>
-							<i class="icon-uni17D"></i>
-						</div>
+		<div class="col-md-12">
+			<div class="col-md-12 no-padding">
+				<!-- Filter -->
+				<ul class="folio-filter" data-option-key="filter">
+					<li><a class="selected" href="#filter" data-option-value="*">All</a></li>
+					<li><a href="#filter" data-option-value=".web">Web</a></li>
+					<li><a href="#filter" data-option-value=".illustrations">Illustrations</a></li>
+					<li><a href="#filter" data-option-value=".print">Print</a></li>
+					<li><a href="#filter" data-option-value=".branding">Branding</a></li>
+					<li><a href="#filter" data-option-value=".packaging">Packaging</a></li>
+				</ul>
+			</div>
+			<!-- Works Content -->
+			<div class="col-md-12 no-padding">
+				<div class="portfolio-grid">
+					<div id="folio" class="isotope" style="position: relative; overflow: hidden; height: 620px;">
+						<div id="da-thumbs" class="da-thumbs">
 
-						<div class="folio-item isotope-item branding" style="position: absolute; left: 0px; top: 0px; transform: translate3d(1401px, 310px, 0px);">
-							<a href="./images/bride-1.jpg" class="prettyPhoto">
-								<div class="folio-thumb">
-									<img src="./images/bride-1.jpg" class="img-responsive" alt="">
-								</div>
-							</a>
-							<div class="folio-overlay">
-								<h4><a href="#">Project Title</a></h4>
-							</div>
-							<i class="icon-uni17D"></i>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
 	</div>
 
-
-<!--<div class="row">-->
-	<!--<div class="col-md-12 no-padding">-->
-		<!--<div class="portfolio-grid">-->
-			<!--<div id="folio" class="isotope">-->
-				<!--<div id="da-thumbs" class="da-thumbs">-->
-				<!--<div class="folio-item isotope-item web packaging">-->
-					<!--<a href="images/projects/1/1.jpg" class="prettyPhoto">-->
-						<!--<div class="folio-thumb">-->
-							<!--<img src="./images/bride-1.jpg" class="img-responsive" alt=""/>-->
-						<!--</div>-->
-					<!--</a>-->
-					<!--<div class="folio-overlay">-->
-						<!--<h4><a href="#">Project Title</a></h4>-->
-					<!--</div>-->
-					<!--<i class="icon-uni17D"></i>-->
-				<!--</div>-->
-				<!--<div id="da-thumbs" class="da-thumbs">-->
-				<!--<div class="folio-item isotope-item web packaging">-->
-					<!--<a href="images/projects/1/1.jpg" class="prettyPhoto">-->
-						<!--<div class="folio-thumb">-->
-							<!--<img src="./images/bride-1.jpg" class="img-responsive" alt=""/>-->
-						<!--</div>-->
-					<!--</a>-->
-					<!--<div class="folio-overlay">-->
-						<!--<h4><a href="#">Project Title</a></h4>-->
-					<!--</div>-->
-					<!--<i class="icon-uni17D"></i>-->
-				<!--</div>-->
-			<!--</div>-->
-			<!--</div>-->
-		<!--</div>-->
-	<!--</div>-->
-<!--</div>-->
 	<script type="text/javascript">
 
 	</script>
