@@ -92,7 +92,7 @@ footer {
     }
 }
 
-/*圖片集合CSS*/
+/*繒��瞻羅繞簞礎XCSS*/
 .folio-item:hover .folio-thumb img {
     transform: scale(1.15);
     transition: .7s;
@@ -151,9 +151,9 @@ footer {
     position: absolute;
     /* height: 100px; */
     z-index: 999;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
     /* margin-right: 10%; */
-    width: 80%;
+    /*width: 80%;/*
 }
 
 div.header.fixNav {
