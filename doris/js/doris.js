@@ -76,10 +76,10 @@ function loadBrides(error, rows){
 function handleHeaderPosition() {
   var CurrentHeaderPosition = $(".header").offset().top;// current header's vertical position
 
-  console.log(CurrentHeaderPosition);
+  //console.log(CurrentHeaderPosition);
 
   var headerFix = function(){
-    console.log('headerFix',CurrentHeaderPosition);
+    //console.log('headerFix',CurrentHeaderPosition);
     var CurrentWindowPosition = $(window).scrollTop();// current vertical position
     if (CurrentWindowPosition > CurrentHeaderPosition) {
       $(".header").addClass("fixNav");
@@ -100,11 +100,29 @@ function handleHeaderPosition() {
   }
 }
 
+function addZicDiv(cls,dir){
+  var eleCount=12;
+  for(var i=0;i<eleCount+8;i++) {
+    $("." + cls).append("<div class='zic zic-top'></div>");
+  }
+
+  var width=($(window).width()/eleCount/2/2)+"px";
+  //console.log($(window).width());
+  //console.log(width);
+
+  $(".zic-top").css("border-left",width+" solid white");
+  $(".zic-top").css("border-bottom",width+" solid #C28D8D");
+  $(".zic-top").css("border-right",width+" solid white");
+  $("." + cls).css("padding-left",width);
+}
+
 $(document).ready(function(){
   $('.carousel').carousel({
     interval: 5000 //changes the speed
   });
   d3.csv(DORIS_CSV_FILES.brides,function(d){return d;},loadBrides);
   handleHeaderPosition();
+  addZicDiv("sep-bottom","FORWARD");
+
   //initialPhoto();
 });
