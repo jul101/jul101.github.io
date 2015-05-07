@@ -198,3 +198,8 @@ body > div.title-menu > div > div.navbar-header > a
     /*border-bottom: 25px solid #C28D8D;*/
     /*border-right: 25px solid white;*/
 }
+
+#about{
+    background-color: wheat;
+    margin-bottom: 0px;
+}
