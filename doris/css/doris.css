@@ -160,7 +160,9 @@ div.header.fixNav {
     position: fixed;
     top: 0;
     bottom: auto;
-    background: rgba(100,100,100,0.70);
+    /*background: rgba(100,100,100,0.70);*/
+    background: rgba(245, 222, 179,0.70);
+    /*245, 222, 179*/
     width: 100%;
     margin: auto;
 }
@@ -202,4 +204,12 @@ body > div.title-menu > div > div.navbar-header > a
 #about{
     background-color: wheat;
     margin-bottom: 0px;
+}
+
+/*.header{*/
+    /*color: hsla(39, 26%, 96%,1);*/
+/*}*/
+
+div p{
+    text-align: center;
 }
