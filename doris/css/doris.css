@@ -193,6 +193,7 @@ nav.fixBGColor ul.navbar-nav li a
     /*color: hsla(39, 26%, 96%,1);*/
 /*}*/
 
-div p{
+#about p
+,#about h1{
     text-align: center;
 }

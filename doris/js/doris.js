@@ -46,7 +46,7 @@ function loadBrides(error, rows){
   var getOneDataHtml=function(data,eachRowCellCount){
     var htmlStr="";
     htmlStr+="<div class='col-md-3 col-sm-6 no-padding folio-item "+data.type+"'>";
-    htmlStr+="	<a href='./"+data.thumbImage+"' class='prettyPhoto'>";
+    htmlStr+="	<a href='./"+data.thumbImage+"' class='prettyPhoto' rel='prettyPhoto[gallery]'>";
     htmlStr+="		<div class='folio-thumb '>";
     htmlStr+="			<img src='./"+data.image+"' class='img-responsive' alt=''>";
     //htmlStr+="			<img src='./"+data.image+"'>";
@@ -71,6 +71,10 @@ function loadBrides(error, rows){
 
   initialBrideIstope($container);
   initialBrideType($container,typeMap);
+  // Prettyphoto
+  $("a[class^='prettyPhoto']").prettyPhoto({
+    theme: 'pp_default'
+  });
 
 }
 
@@ -177,7 +181,21 @@ function handleHeaderColor(){
   }
 }
 
+function initialMenu(){
+  $("#navbar li").on('click',function(){
+    if ($(this).hasClass('active')) {
+      return false;
+    }
+    $(".active").toggleClass("active");
+    $(this).toggleClass("active");
+  });
+}
+
+/**
+ * Registered in body / window onload event to avoid the images loading delay cause istope not functional
+ * **/
 function initialAll(){
+  initialMenu();
   $('.carousel').carousel({
     interval: 5000 //changes the speed
   });
