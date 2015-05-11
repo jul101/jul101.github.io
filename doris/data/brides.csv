@@ -1,7 +1,7 @@
-﻿id,title,thumbImage,image
-1,新娘1,images/bride-1.jpg,images/bride-1.jpg
-2,新娘2,images/bride-2.jpg,images/bride-2.jpg
-3,新娘3,images/bride-3.jpg,images/bride-3.jpg
-4,新娘4,images/bride-4.jpg,images/bride-4.jpg
-5,新娘5,images/bride-5.jpg,images/bride-5.jpg
-6,新娘6,images/bride-6.jpg,images/bride-6.jpg
+﻿id,title,thumbImage,image,type
+1,新娘1,images/bride-1.jpg,images/bride-1.jpg,Grace
+2,新娘2,images/bride-2.jpg,images/bride-2.jpg,Vintage
+3,新娘3,images/bride-3.jpg,images/bride-3.jpg,Grace
+4,新娘4,images/bride-4.jpg,images/bride-4.jpg,Vintage
+5,新娘5,images/bride-5.jpg,images/bride-5.jpg,Vintage
+6,新娘6,images/bride-6.jpg,images/bride-6.jpg,Elegant

@@ -11,26 +11,29 @@
 	<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 	<!-- Latest compiled and minified CSS -->
-	<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
 	<!-- Optional theme -->
-	<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">-->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../js/bootstrap/css/bootstrap-theme.min.css">
-
+	<link href="./js/isotope/isotope.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./css/doris.css">
 </head>
 <script src="../js/ieAdaptor.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery.scrollTo.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="../js/bootstrap/js/bootstrap.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="//d3js.org/queue.v1.min.js"></script>
+<script src="./js/isotope/isotope.pkgd.js"></script>
 <script type="text/javascript" src="./js/doris.js"></script>
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav id="title-nav" class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -45,7 +48,7 @@
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#myCarousel">Home</a></li>
 				<li><a href="#about">About</a></li>
-				<li><a href="#folio">About</a></li>
+				<li><a href="#brides">Brides</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
@@ -133,7 +136,7 @@
 	</div>
 </div>
 
-<div class="portfolio-container" style="/*float: left;*/background-color: #C28D8D;">
+<div id="brides" class="portfolio-container" style="/*float: left;*/background-color: #C28D8D;">
 
 	<div style="background-color: #C28D8D;">
 		<!--<object data="../images/ZigZag.svg" type="image/svg+xml" id="alphasvg" width="100%"></object>-->
@@ -147,28 +150,28 @@
 	<div class="col-md-12 brides">
 		<div class="col-md-12 no-padding">
 			<!-- Filter -->
-			<ul class="folio-filter" data-option-key="filter">
-				<li><a class="selected" href="#filter" data-option-value="*">All</a></li>
-				<li><a href="#filter" data-option-value=".web">Web</a></li>
-				<li><a href="#filter" data-option-value=".illustrations">Illustrations</a></li>
-				<li><a href="#filter" data-option-value=".print">Print</a></li>
-				<li><a href="#filter" data-option-value=".branding">Branding</a></li>
-				<li><a href="#filter" data-option-value=".packaging">Packaging</a></li>
+			<ul id="bride-filter" class="folio-filter" data-option-key="filter">
+				<li><a class="selected" href="#bride-filter" data-option-value="*">All</a></li>
 			</ul>
 		</div>
 		<!-- Works Content -->
 		<div class="col-md-12 no-padding">
 			<div class="portfolio-grid">
-				<div id="folio" class="isotope" style="position: relative; overflow: hidden;">
-					<div id="da-thumbs" class="da-thumbs">
-
-					</div>
+				<div id="folio" style="position: relative; overflow: hidden;">
+					<div id="da-thumbs" class="da-thumbs"/>
 				</div>
 			</div>
 		</div>
-	</div>
 
+	</div>
 </div>
+
+<div id="contact" class="" style="/*float: left;*/background-color: #C28D8D;">
+	<div id="about" class="jumbotron">
+		Contact Me
+	</div>
+</div>
+
 
 
 </body>

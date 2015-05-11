@@ -2,10 +2,6 @@ var DORIS_CSV_FILES={
   brides:"./data/brides.csv"
 };
 
-function test(){
-  console.log(123);
-}
-
 function initialPhoto(){
   $(window).load(function() {
     "use strict";
@@ -42,25 +38,24 @@ function initialPhoto(){
 
 
 function loadBrides(error, rows){
-  console.log('data done',rows);
+  console.log('loadBrides',rows);
+  var targetId="#da-thumbs";
   var count=rows.length;
+  var typeMap=new Object();
   var eachRowCellCount=2;
   var getOneDataHtml=function(data,eachRowCellCount){
     var htmlStr="";
-    //htmlStr+="<div class='folio-item' style='transform: translate3d(0px, 0px, 0px);'>";
-    //htmlStr+="<div class='folio-item isotope-item web packaging' style='position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);'>";
-    //htmlStr+="<div class='folio-item isotope-item web packaging' style='position: absolute; left: 0px; top: 0px; transform: translate3d("+(eachRowCellCount*300)+"px, 0px, 0px);'>";
-    //htmlStr+="<div class='col-md-3'>";
-    htmlStr+="<div class='col-md-2 col-sm-6 no-padding folio-item'>";
+    htmlStr+="<div class='col-md-3 col-sm-6 no-padding folio-item "+data.type+"'>";
     htmlStr+="	<a href='./"+data.thumbImage+"' class='prettyPhoto'>";
-    htmlStr+="		<div class='folio-thumb'>";
+    htmlStr+="		<div class='folio-thumb '>";
     htmlStr+="			<img src='./"+data.image+"' class='img-responsive' alt=''>";
+    //htmlStr+="			<img src='./"+data.image+"'>";
     htmlStr+="		</div>";
     htmlStr+="	</a>";
     htmlStr+="	<div class='folio-overlay'>";
     htmlStr+="		<h4><a href='#'>"+data.title+"</a></h4>";
     htmlStr+="	</div>";
-    htmlStr+="	<i class='icon-uni17D'></i>";
+    //htmlStr+="	<i class='icon-uni17D'></i>";
     htmlStr+="</div>";
     return htmlStr;
   };
@@ -68,8 +63,14 @@ function loadBrides(error, rows){
   var rowHtml="";
   for(var i=0;i<count;i++){
     rowHtml+=getOneDataHtml(rows[i],i);
+    typeMap[rows[i].type]=true;
   }
-  $("#da-thumbs").append(rowHtml);
+  $(targetId).append(rowHtml);
+  //console.log('START...',$(targetId).height());
+  var $container = $(targetId);
+
+  initialBrideIstope($container);
+  initialBrideType($container,typeMap);
 
 }
 
@@ -100,6 +101,41 @@ function handleHeaderPosition() {
   }
 }
 
+/**
+ * 新娘分類 use Istope
+ * **/
+function initialBrideIstope($container){
+  //console.log('initialView');
+  //console.log('$container...',$container);
+  $container.isotope({
+    // options
+    itemSelector: '.folio-item',
+    //layoutMode: 'masonry'
+    layoutMode: 'fitRows'
+  });
+
+}
+
+/**
+ * 新娘分類 List And Click Event
+ * **/
+function initialBrideType($container,typeMap){
+  for(var key in typeMap){
+    var htmlStr="<li><a href='#bride-filter' data-option-value='."+key+"'>"+key+"</a></li>";
+    $(".folio-filter").append(htmlStr);
+  }
+
+  $(".folio-filter li a").on('click',function(){
+    if ($(this).hasClass('selected')) {
+      return false;
+    }
+    var filter=$(this).data('option-value');
+    $container.isotope({ filter: filter });
+    $(".selected").toggleClass("selected");
+    $(this).toggleClass("selected");
+  });
+}
+
 function addZicDiv(cls,dir){
   var eleCount=12;
   for(var i=0;i<eleCount+8;i++) {
@@ -116,13 +152,48 @@ function addZicDiv(cls,dir){
   $("." + cls).css("padding-left",width);
 }
 
-$(document).ready(function(){
+function handleHeaderColor(){
+  var CurrentHeaderPosition = $(".navbar").offset().top;// current header's vertical position
+
+  var headerFix = function(){
+    //console.log('headerFix',CurrentHeaderPosition);
+    var CurrentWindowPosition = $(window).scrollTop();// current vertical position
+    if (CurrentWindowPosition > CurrentHeaderPosition) {
+      $(".navbar").addClass("fixBGColor");
+    } else {
+      $(".navbar").removeClass("fixBGColor");
+    }
+  };
+
+  headerFix();// call headerFix() when the page was loaded
+  if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+    $(window).bind("touchend touchcancel touchleave", function(e){
+      headerFix();
+    });
+  } else {
+    $(window).scroll(function() {
+      headerFix();
+    });
+  }
+}
+
+function initialAll(){
   $('.carousel').carousel({
     interval: 5000 //changes the speed
   });
-  d3.csv(DORIS_CSV_FILES.brides,function(d){return d;},loadBrides);
-  handleHeaderPosition();
-  addZicDiv("sep-bottom","FORWARD");
+  handleHeaderColor();
+  //d3.csv(DORIS_CSV_FILES.brides,function(d){return d;},loadBrides);
+  //handleHeaderPosition();
+  //addZicDiv("sep-bottom","FORWARD");
+  //if multi csv file need to read, use queue to make sure data will load as expect
+  queue()
+      .defer(d3.csv,DORIS_CSV_FILES.brides,function(d){return d;},loadBrides);
+}
 
-  //initialPhoto();
+$(document).ready(function(){
+  //$("body").on('load',initialAll);
+});
+
+$(window).load(function() {
+  initialAll();
 });
