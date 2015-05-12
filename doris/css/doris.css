@@ -194,6 +194,9 @@ nav.fixBGColor ul.navbar-nav li a
 /*}*/
 
 #about p
-,#about h1{
+,#about h1
+,#contact + div p
+,#contact + div h1
+{
     text-align: center;
 }
