@@ -26,7 +26,7 @@
 </head>
 <script src="../js/ieAdaptor.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="./js/jquery.scrollTo.min.js"></script>
+<!--<script type="text/javascript" src="./js/jquery.scrollTo.min.js"></script>-->
 <!-- Latest compiled and minified JavaScript -->
 <script src="../js/bootstrap/js/bootstrap.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -50,10 +50,11 @@
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#navbar">Home</a></li>
+				<li class="active"><a href="#title-nav">Home</a></li>
 				<li><a href="#about">About</a></li>
 				<li><a href="#brides">Brides</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="#contact-info">Contact</a></li>
+				<li><a href="../index.html">Yuan Lin Collections</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>
@@ -141,7 +142,6 @@
 		<!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
 	</div>
 </div>
-
 <div id="brides" class="portfolio-container" style="/*float: left;*/background-color: #C28D8D;">
 
 	<div style="background-color: #C28D8D;">
@@ -152,33 +152,43 @@
 2431.8,30.5 2556.1,135.8 2680.4,30.5 2804.7,135.8 2929.2,30.5 3003.1,93.1 3003.1,0 0,0 0,75.1 71.6,135.8 "/>
 		</svg>
 	</div>
+</div>
+<div class="col-md-12 brides">
+	<div class="col-md-12 no-padding">
+		<!-- Filter -->
+		<ul id="bride-filter" class="folio-filter" data-option-key="filter">
+			<li><a class="selected" href="#bride-filter" data-option-value="*">All</a></li>
+		</ul>
+	</div>
+	<!-- Works Content -->
+	<div class="col-md-12 no-padding">
+		<div class="portfolio-grid">
+			<div id="folio" style="position: relative; overflow: hidden;">
+				<div id="da-thumbs" class="da-thumbs">
 
-	<div class="col-md-12 brides">
-		<div class="col-md-12 no-padding">
-			<!-- Filter -->
-			<ul id="bride-filter" class="folio-filter" data-option-key="filter">
-				<li><a class="selected" href="#bride-filter" data-option-value="*">All</a></li>
-			</ul>
-		</div>
-		<!-- Works Content -->
-		<div class="col-md-12 no-padding">
-			<div class="portfolio-grid">
-				<div id="folio" style="position: relative; overflow: hidden;">
-					<div id="da-thumbs" class="da-thumbs"/>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
 
 <div id="contact" class="" style="/*float: left;*/background-color: #C28D8D;">
-	<div class="jumbotron">
-		Contact Me
+
+	<div style="background-color: wheat;">
+		<!--<object data="../images/ZigZag.svg" type="image/svg+xml" id="alphasvg" width="100%"></object>-->
+		<svg width="100%" height="100%" viewBox="0 0 3000 165" style="margin-top: -2px;" preserveAspectRatio="xMinYMin slice">
+			<polygon id="up" style="fill: #C28D8D;" points="195.8,30.5 320,135.8 444.2,30.5 568.4,135.8 692.6,30.5 816.8,135.8 941,30.5 1065.2,135.8
+1189.5,30.5 1313.7,135.8 1438,30.5 1562.2,135.8 1686.3,30.5 1810.6,135.8 1934.8,30.5 2059,135.8 2183.2,30.5 2307.5,135.8
+2431.8,30.5 2556.1,135.8 2680.4,30.5 2804.7,135.8 2929.2,30.5 3003.1,93.1 3003.1,0 0,0 0,75.1 71.6,135.8 "/>
+		</svg>
 	</div>
 </div>
 
-
-
+<div id="contact-info" class="col-md-12" style="/*float: left;*/background-color: wheat;">
+	<div class="jumbotron" style="/*float: left;*/background-color: wheat;">
+	<!--<div class="container">-->
+		<p >Contact Me</p>
+	</div>
+</div>
 </body>
 </html>
