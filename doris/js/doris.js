@@ -67,14 +67,30 @@ function handleHeaderColor(){
     }
   };
 
+  /**
+   * Images were dynamically loaded  from csv file
+   * sometimes will delay to reveal and cause istope effect fail
+   * (height and width problem)
+   * Try to workaround with code below
+   * **/
+  var istopeFix = function(){
+    //All is the first child of filter
+    if (!$("#bride-filter > li:nth-child(1) > a").hasClass('selected')) {
+      return false;
+    }
+    $("#da-thumbs").isotope({ filter: '*' });
+  };
+
   headerFix();// call headerFix() when the page was loaded
   if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
     $(window).bind("touchend touchcancel touchleave", function(e){
       headerFix();
+      istopeFix();
     });
   } else {
     $(window).scroll(function() {
       headerFix();
+      istopeFix();
     });
   }
 }
