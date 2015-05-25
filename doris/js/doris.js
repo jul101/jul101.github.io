@@ -4,11 +4,34 @@ var DORIS_CSV_FILES={
 
 $(document).ready(function(){
   //$("body").on('load',initialAll);
+  $("#owl-example").owlCarousel({
+    // Most important owl features
+    singleItem:true
+    // ,navigation : true
+  });
 });
 
 $(window).load(function() {
   initialAll();
+  fixOwl();
 });
+
+function fixOwl(){
+  var owlId="#owl-example";
+  var $owl=$(owlId);
+
+  //fix itemHeight
+  $owl.find(".item").each(function(){
+    $(this).find(".sliderItem").css({
+      width:"auto"
+      ,height:$(window).height()+"px"
+    });
+  });
+
+  //fix pageTool marginTop
+  var height=$owl.find(".owl-controls").height();
+  $owl.find(".owl-controls").css("margin-top","-"+(height+10)+"px");
+}
 
 /**
  * Registered in body / window onload event to avoid the images loading delay cause istope not functional
