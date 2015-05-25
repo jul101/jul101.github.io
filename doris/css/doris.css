@@ -197,8 +197,25 @@ nav.fixBGColor ul.navbar-nav li a
 ,#about h1
 ,#contact + div p
 ,#contact + div h1
+,#contact + div h2
+,#contact + div h3
 {
     text-align: center;
+}
+
+#contact div p a,#contact-info > div > p > a{
+    font-size: 1.5em;
+    color: #C28D8D;
+}
+
+#contact div p a,#contact-info > div > p > a:hover{
+    color: #FFffff;
+}
+a.mail:before {
+    content: url('../images/mail-icon.png');
+}
+a.phone:before {
+    content: url('../images/phone-icon.png');
 }
 
 #owl-example .item .sliderItem{
@@ -224,4 +241,12 @@ nav.fixBGColor ul.navbar-nav li a
 .index-info a
 ,.index-info p{
     color: rgba(255, 255, 255, 0.75);
+}
+
+#about > div.container-fluid > div > div > div > div.panel-heading{
+    font-size: 2em;
+}
+
+#about > div.container-fluid > div > div > div > div.panel-body{
+    font-size: 1.5em;
 }
