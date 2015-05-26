@@ -1,20 +1,49 @@
 var DORIS_CSV_FILES={
   brides:"./data/brides.csv"
 };
-
+var $owl;
 $(document).ready(function(){
   //$("body").on('load',initialAll);
-  $("#owl-example").owlCarousel({
+  var owlId="#owl-example";
+  $owl=$(owlId);
+  $owl.owlCarousel({
     // Most important owl features
-    singleItem:true
+    singleItem : true
+    , afterAction : function(){
+      var $leftA=$("a.left");
+      var $rightA=$("a.right");
+      var hasPre=true;
+      var hasNex=true;
+      var currentIndex=this.currentItem;
+      var itemSize=this.$owlItems.length;
+      if(currentIndex==0){
+        hasPre=false;
+      }
+      if((currentIndex+1)>=itemSize){
+        hasNex=false;
+      }
+      !hasPre?$leftA.hide():$leftA.show();
+      !hasNex?$rightA.hide():$rightA.show();
+    }
     // ,navigation : true
   });
+  initialOwlControl(owlId);
 });
 
 $(window).load(function() {
   initialAll();
   fixOwl();
 });
+
+function initialOwlControl(owlId){
+  var owl = $(owlId).data('owlCarousel');
+  $("a.left").click(function(){
+    owl.prev();
+  });
+  $("a.right").click(function(){
+    owl.next();
+  });
+}
 
 function fixOwl(){
   var owlId="#owl-example";
