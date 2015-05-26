@@ -169,19 +169,20 @@ nav div.navbar-header a.navbar-brand{
     color: #ffffff;
 }
 
-nav.fixBGColor{
-    color: #ffffff;
-    background: rgba(245,222,179,0.70);
-    /*background :hsla(39, 26%, 96%, 0.4);*/
-    border: none;
-}
 
-nav.fixBGColor ul.navbar-nav li a
-,nav.fixBGColor div.navbar-header a.navbar-brand {
+/*nav.fixBGColor{*/
     /*color: #ffffff;*/
-    /*background: rgba(100,100,100,0.70);*/
+    /*background: rgba(245,222,179,0.70);*/
+    /*/!*background :hsla(39, 26%, 96%, 0.4);*!/*/
     /*border: none;*/
-}
+/*}*/
+
+/*nav.fixBGColor ul.navbar-nav li a*/
+/*,nav.fixBGColor div.navbar-header a.navbar-brand {*/
+    /*/!*color: #ffffff;*!/*/
+    /*/!*background: rgba(100,100,100,0.70);*!/*/
+    /*/!*border: none;*!/*/
+/*}*/
 
 .brides{
     background-color: #C28D8D;
