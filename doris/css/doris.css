@@ -72,6 +72,12 @@ footer {
     }
 }
 
+@media only screen and (max-width: 500px) {
+    #contact-info div.jumbotron{
+        margin-bottom: auto;
+    }
+}
+
 .folio-item:hover .folio-thumb img {
     transform: scale(1.15);
     transition: .7s;
@@ -189,6 +195,10 @@ nav.fixBGColor ul.navbar-nav li a
     margin-bottom: 0px;
 }
 
+#about .logo{
+    margin: 50px auto;
+}
+
 /*.header{*/
     /*color: hsla(39, 26%, 96%,1);*/
 /*}*/
@@ -204,7 +214,7 @@ nav.fixBGColor ul.navbar-nav li a
 }
 
 #contact div p a,#contact-info > div > p > a{
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #C28D8D;
 }
 
@@ -244,9 +254,19 @@ a.phone:before {
 }
 
 #about > div.container-fluid > div > div > div > div.panel-heading{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 #about > div.container-fluid > div > div > div > div.panel-body{
-    font-size: 1.5em;
+    font-size: 1.3em;
+}
+
+#owl-example > div.owl-controls > div > div.owl-page.active > span{
+    opacity: 0.5;
+    filter: Alpha(Opacity=50);
+    background-color: rgb(255, 198, 0);
+}
+
+#owl-example > div.owl-controls > div > div > span {
+    background-color: rgb(255, 255, 255);
 }
