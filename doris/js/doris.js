@@ -30,11 +30,6 @@ $(document).ready(function(){
   initialOwlControl(owlId);
 });
 
-$(window).on("orientationchange",function(){
-  initialAll();
-  fixOwl();
-});
-
 $(window).load(function() {
   initialAll();
   fixOwl();
