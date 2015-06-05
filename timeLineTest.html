@@ -18,12 +18,10 @@
     <![endif]-->
   </head>
   <style type="text/css">
-    .timeLine{
+    .timeContent{
       /*background-color: red;*/
     }
-    /*.timeLine > div{
-      float: left;
-    }*/
+
     .l-zone{
       text-align: right;
       /*background-color: green;*/
@@ -32,70 +30,94 @@
       /*background-color: gray;*/
     }
     .r-zone{
-      background-color: yellow;
+      /*background-color: yellow;*/
     }
-    .timeLine div.title,
-    .timeLine div.content{
-      float: left;
+    .timeContent div.title{
+      font-weight: bold;
     }
-    .timeLine :before,.timeLine :after{
+    .timeContent div.content{
+      /*float: left;*/
+    }
+    .timeContent :before,.timeContent :after{
       color: transparent;
     }
     .time,.time-end{
       text-align: center;
-      height: 100px;
+      background-color: white;
+      /*height: 100px;*/
       z-index: 1;
     }
-    .time:before,
-    .time-end:before{
-        content: ".";
-        /*color: aqua;*/
-        color: transparent;
-        background-color: aqua;
-        border-radius: 2em;
-        margin: 0px 2em;
-        /* padding: 1em; */
-        position: absolute;
-        height: 2em;
-        width: 2em;
-        z-index: -1;
+
+    /** screen size under 768 will use css above **/
+    @media screen and (max-width:768px){
+      .empty{
+        visibility: visible;
+      }
+      .r-zone .timeDirect{
+        left: -25%;
+      }
+      .l-zone .timeDirect{
+        right: -25%;
+      }
+      .r-zone .timeDirect,
+      .l-zone .timeDirect{
+        width: 25%;
+      }
     }
-    .time:after{
-      content: ".";
-      color: transparent;
-      background-color: aqua;
-      position: absolute;
+
+    /** screen size over 769 will use css above **/
+    @media screen and (min-width: 769px) {
+      .empty{
+        visibility: hidden;
+      }
+      .r-zone .timeDirect{
+        left: -50%;
+      }
+      .l-zone .timeDirect{
+        right: -50%;
+      }
+      .r-zone .timeDirect,
+      .l-zone .timeDirect{
+        width: 50%;
+      }
+    }
+
+    
+
+    /**NEW**/
+
+    .c-zone div.timeCircle,.c-zone div.timeVLine{
+      /*position: absolute;*/
+      /*z-index: -1;*/
+      margin: 0 auto;
+    }
+    .c-zone div.timeCircle{
+      background-color: black;
+      height: 1.5em;
+      width: 1.5em;
+      border-radius: 2em;
+    }
+
+    .c-zone div.timeVLine{
+      background-color: black;
       height: 100%;
-      width: 2%;
-      left: 48%;
+      width: 0.2em;
+    }
+
+    .r-zone .timeDirect,
+    .l-zone .timeDirect{
+      /*background-color: green;*/
+      height: 1.5em;
+      /*width: 1.5em;*/
+      position: absolute;
+      border: solid 0.2em black;
+      top: 0.75em;
+      
       z-index: -1;
     }
 
-    .r-zone:before{
-        content: ".";
-        position: absolute;
-        border: solid 0.2em black;
-        border-bottom-width: 0px;
-        border-left-width: 0px;
-        width: 40%;
-        height: 10px;
-        left: -40%;
-        top: 10px;
-        margin: 0 10%;
-    }
-
-    .l-zone:after{
-        content: ".";
-        position: absolute;
-        border: solid 0.2em black;
-        border-bottom-width: 0px;
-        border-right-width: 0px;
-        width: 40%;
-        height: 10px;
-        right: -40%;
-        top: 10px;
-        margin: 0 10%;
-    }
+    
+    
 
   </style>
   <body>
@@ -108,51 +130,85 @@
 
   <div class="container">
     <div class="timeLine">
-      <div class="row">
-        <div class="l-zone col-sm-4">
-          <h3 class="title">Good</h3>
-          <p class="content">123</p>
-        </div>
-        <div class="c-zone col-sm-4">
-          <div class="time">2015年5月1日</div>
-        </div>
-        <div class="r-zone col-sm-4">
-          <h3 class="title">Year</h3>
-          <div class="panel panel-default">
-            <div class="panel-body">
-                789
-                123
-            </div>
-          </div>
-          <p>123</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="l-zone col-sm-4">
-          <h3 class="title">Good</h3>
-          <p class="content">123</p>
-        </div>
-        <div class="c-zone col-sm-4">
-          <div class="time-end">2015年4月1日</div>
-        </div>
-        <div class="r-zone col-sm-4">
-          <h3 class="title">Year</h3>
-          <p class="content">789</p>
-        </div>
-      </div>
-      
+      <!-- js append content -->
     </div>
   </div>
 
-<div class="panel panel-default">
+<!-- <div class="panel panel-default">
   <div class="panel-body">
     Basic panel
   </div>
-</div>
+</div> -->
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
   </body>
+  <script type="text/javascript">
+    var dataList=[
+      {"time":"2015/01/01","title":"董卓的橫暴","content":"内政・計略・外交・探索などに関連。知力トップは諸葛亮の100、続いて司馬懿・張昭・龐統の98。後のシリーズでは知力と政治力に分かれていく。その武将と同じ国にその武将より知力が2以上高い武将がいる場合に限り、武将に書物を施すことで知力を1上昇させられる。なお90以上まで上昇させた武将は軍師としてコマンド実行時に助言をしてくれる。知力が高いほど助言が正確で、知力100の軍師の助言は100%正確であり、98の軍師の助言もほぼ正確である。だが、95以下になると助言に嘘が目立ちはじめ、助言をしてくれる最低値の知力90ではほとんどあてにならない。\nまた1つの国に軍師が2人以上いた場合、最も知力が高い軍師が助言を行う。軍師がいない国の場合は、君主がいる国に軍師がいる場合は代わって助言をしてくれる。"}
+      ,{"time":"2015/02/01","title":"曹操的雄飛","content":"軍事全般に関連。武力トップは呂布の100、続いて関羽・張飛・趙雲の99。後のシリーズでは武力と統率力に分かれていく。武力は戦場で敵武将の部隊を全滅させた武将が3上昇（君主の部隊を全滅させた場合は10上昇）[4]するため、比較的成長させやすい能力である。なお戦闘中に敵に捕まった武将は武力が3下降する。"}
+      ,{"time":"2015/03/01","title":"劉備的雌伏","content":"武将の忠誠および民忠誠度（民忠）の上昇・人材登用などに関連。カリスマトップは曹操の100。後のシリーズでの魅力にあたる。君主のみ上昇・下降が可能で、施しコマンドで民に5000以上の米を施しなおかつ米の残りが100未満になったときに5上昇する[5]。また、略奪コマンドの実行で10下降するほか、他国からの外交の使者を斬る、外交コマンドの婚姻に失敗する、娘を嫁に出している君主の国に攻め込む、といったことによっても下降する。カリスマは君主にとっては人材登用において特に重要な能力であるためか君主とその血縁の武将は軒並み90以上の数値に設定されている。"}
+      ,{"time":"2015/04/01","title":"諸葛亮登場","content":"Chuck Blazer, a former FIFA executive committee member, admits he and other officials took bribes ahead of the 1998 and 2010 World Cups, newly released court records show."}
+      ,{"time":"2015/05/01","title":"関羽的奮戦","content":"His critically savaged movie, \"Aloha,\" performed poorly in its first weekend in theaters, collecting just $10.5 million despite a shiny pedigree and a star-studded cast. And now he's apologizing for what critics are calling the culturally insensitive casting of actress Emma Stone as a part-Asian character."}
+      ,{"time":"2015/06/01","title":"三國的鼎立","content":"The Allison Ng character in the film is a young Air Force pilot in Hawaii with a father who is half Chinese. Ng is proud to be one-quarter Hawaiian, a fact she repeats to almost everyone she encounters."}
+    ];
+    $(document).ready(function(){
+      var $timeLineZone=$(".timeLine");
+      for(var i=0;i<dataList.length;i++){
+        var isBreak=(i==(dataList.length-1));
+        var isOdd=(i%2!=0);
+        var row=dataList[i];
+        var rowHml="";
+        var lZoneCls="l-zone hidden-xs col-sm-4"+(isOdd?"":" empty");
+        var cZoneCls="c-zone col-xs-4 col-sm-4";
+        var cZoneChildCls="time";//time | time-end
+        var rZoneCls="r-zone col-xs-8 col-sm-4"+(isOdd?" empty":"");
+        // console.log(i,isOdd);
+        rowHml+='<div class="row timeContent">';
+        rowHml+=' <div class="'+lZoneCls+'">';
+        rowHml+='   <div class="timeDirect"></div>';
+        rowHml+='   <div class="panel panel-default">';
+        rowHml+='     <div class="panel-heading title">'+row.title+'</div>';
+        rowHml+='     <div class="panel-body content">'+row.content+'</div>';
+        rowHml+='   </div>';
+        rowHml+=' </div>';
+        rowHml+=' <div class="'+cZoneCls+'">';
+        rowHml+='   <div class="'+cZoneChildCls+'">'+row.time+'</div>';
+        rowHml+='   <div class="timeCircle"></div>';
+        rowHml+='   <div class="timeVLine'+(isBreak?'End':'')+'"></div>';
+        rowHml+=' </div>';
+        rowHml+=' <div class="'+rZoneCls+'">';
+        rowHml+='   <div class="timeDirect"></div>';
+        rowHml+='   <div class="panel panel-default">';
+        rowHml+='     <div class="panel-heading title">'+row.title+'</div>';
+        rowHml+='     <div class="panel-body content">'+row.content+'</div>';
+        rowHml+='   </div>';
+        rowHml+=' </div>';
+        rowHml+='</div>';
+        $timeLineZone.append(rowHml);
+      }
+
+      var adjustTimeLine=function(){
+        var $row=$timeLineZone.find(".row");
+        console.log('timeLineZone',$timeLineZone);
+        $row.each(function(){
+          var height=$(this).find(".r-zone .panel").height();
+          var $child=$(this).find(".timeVLine");
+          $child.height(height);
+        });
+      }
+
+      adjustTimeLine();
+      
+      $(window).resize(function(){
+        adjustTimeLine();
+      });
+
+      $(window).resize(function(){
+        console.log("kk");
+      });
+    });
+  </script>
 </html>
