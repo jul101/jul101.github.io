@@ -271,3 +271,22 @@ a.phone:before {
 #owl-example > div.owl-controls > div > div > span {
     background-color: rgb(255, 255, 255);
 }
+
+.indicator {
+    color: indigo;
+    position: fixed;
+    top: 90%;
+    right: 5%;
+    z-index: 999;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.indicator span.glyphicon{
+    font-size: 2em;
+    text-align: center;
+    vertical-align: middle;
+    /*-moz-text-shadow:3px 3px 3px #cccccc;;*/
+    /*-webkit-text-shadow:3px 3px 3px #cccccc;;*/
+    /*text-shadow:3px 3px 3px #cccccc;;*/
+}
