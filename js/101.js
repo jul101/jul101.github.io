@@ -29,15 +29,16 @@ function registerOnClick(){
 	});
 }
 var CSV_FILES={
-	webDesigns:"./data/webDesigns.csv"
+	webDesigns:"./data/webDesigns.csv",
+	experience:"./data/experiences.csv"
 }
 
 function openData(url){
 	window.open(url);
 }
 
-function initial(error, rows){
-	console.log('data done',rows);
+function initial(error, rows,experiences){
+	console.log('data done',arguments);
 	var count=rows.length;
 	var eachRowCellCount=2;
 	var getOneDataHtml=function(data,eachRowCellCount){
@@ -65,11 +66,16 @@ function initial(error, rows){
 	rowHtml+="</div>";
 	$("#dataListZone").append(rowHtml);
 
+	var timeLine=new TimeLine("timeLine");
+	timeLine.appendContent(experiences);
+
+	initialMenuScroll();
 }
 
 $(document).ready(function(){
 	//var csvFile=["data/image.csv","webDesigns.csv"];
-	d3.csv(CSV_FILES.webDesigns,eachRowCallBack,initial);
+	//d3.csv(CSV_FILES.webDesigns,eachRowCallBack,initial);
+
 
 	////d3.csv(csvFile,function(d){return d;},callBack);
 	////if multi csv file need to read, use queue to make sure data will load as expect
@@ -78,8 +84,8 @@ $(document).ready(function(){
 	//	.defer(d3.csv,csvFile,eachRowCallBack,callBack);
     //
 	////if multi csv file need to read, use queue to make sure data will load as expect
-	//queue()
-	//	.defer(d3.csv,csvFile,eachRowCallBack)
-	//	.defer(d3.csv,csvFile,eachRowCallBack)
-	//	.await(finalCall);
+	queue()
+		.defer(d3.csv,CSV_FILES.webDesigns,eachRowCallBack)
+		.defer(d3.csv,CSV_FILES.experience,eachRowCallBack)
+		.await(initial);
 });

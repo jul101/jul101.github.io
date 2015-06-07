@@ -55,7 +55,7 @@ div#navbar ul.nav li a:active {
 }
 
 .container{
-    color: #ffffff;
+    /*color: #ffffff;*/
 }
 
 div#about{
@@ -66,3 +66,68 @@ div#about{
 .jumbotron,.thumbnail{
     background: rgba(255,255,255,0.75);
 }
+
+/*override*/
+.timeContent div.time,
+.timeContent div.title{
+    font-size: 2em;
+}
+
+.timeContent div.content{
+    font-size: 1.5em;
+}
+
+.r-zone .timeDirect, .l-zone .timeDirect {
+    height: 2em;
+    top: 1.5em;
+}
+
+.time, .time-end {
+    background-color: indigo;
+    color: white;
+    /*font-size: 2em;*/
+}
+
+.timeContent .title {
+    background: #D1BFDF;
+}
+
+h1.contentTitle{
+    color: white;
+    margin: 2em auto;
+}
+
+.indicator {
+    color: rgb(95, 164, 224);
+    position: fixed;
+    top: 90%;
+    right: 5%;
+    z-index: 999;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.indicator span.glyphicon{
+    font-size: 2em;
+    text-align: center;
+    vertical-align: middle;
+    /*-moz-text-shadow:3px 3px 3px #cccccc;;*/
+    /*-webkit-text-shadow:3px 3px 3px #cccccc;;*/
+    /*text-shadow:3px 3px 3px #cccccc;;*/
+}
+
+#contact a{
+    font-size: 1.5em;
+    color: white;
+    vertical-align: bottom;
+}
+#contact img.iconImg{
+    width: 1.5em;
+    /*height: 2em;*/
+    /*color: white;*/
+}
+
+.contactList{
+    text-align: center;
+}
+

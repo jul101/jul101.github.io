@@ -1,0 +1,93 @@
+.l-zone{
+    text-align: right;
+    /*background-color: green;*/
+}
+.c-zone{
+    /*background-color: gray;*/
+}
+.r-zone{
+    /*background-color: yellow;*/
+}
+.timeContent div.title{
+    font-weight: bold;
+}
+.timeContent div.content{
+    /*float: left;*/
+}
+.timeContent :before,.timeContent :after{
+    color: transparent;
+}
+.time,.time-end{
+    text-align: center;
+    background-color: white;
+    /*height: 100px;*/
+    z-index: 1;
+}
+
+/** screen size under 768 will use css above **/
+@media screen and (max-width:768px){
+    .empty{
+        visibility: visible;
+    }
+    .r-zone .timeDirect{
+        left: -25%;
+    }
+    .l-zone .timeDirect{
+        right: -25%;
+    }
+    .r-zone .timeDirect,
+    .l-zone .timeDirect{
+        width: 25%;
+    }
+}
+
+/** screen size over 769 will use css above **/
+@media screen and (min-width: 769px) {
+    .empty{
+        visibility: hidden;
+    }
+    .r-zone .timeDirect{
+        left: -50%;
+    }
+    .l-zone .timeDirect{
+        right: -50%;
+    }
+    .r-zone .timeDirect,
+    .l-zone .timeDirect{
+        width: 50%;
+    }
+}
+
+
+
+/**NEW**/
+
+.c-zone div.timeCircle,.c-zone div.timeVLine{
+    /*position: absolute;*/
+    /*z-index: -1;*/
+    margin: 0 auto;
+}
+.c-zone div.timeCircle{
+    background-color: black;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 2em;
+}
+
+.c-zone div.timeVLine{
+    background-color: black;
+    height: 100%;
+    width: 0.2em;
+}
+
+.r-zone .timeDirect,
+.l-zone .timeDirect{
+    /*background-color: green;*/
+    height: 1.5em;
+    /*width: 1.5em;*/
+    position: absolute;
+    border: solid 0.2em black;
+    top: 0.75em;
+
+    z-index: -1;
+}
