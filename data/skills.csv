@@ -1,0 +1,18 @@
+id,type,name,percentage,status
+1,design,Illustrator,90,active
+2,design,Photoshop,90,active
+3,design,Preprint,85,active
+4,design,Quark Xpress,80,active
+5,design,Indesign,80,active
+6,design,Corel Draw,60,active
+7,programing,CSS,70,active
+8,programing,CSS3,70,active
+9,programing,Javascript,75,active
+10,programing,jQuery,70,active
+11,programing,Java,80,active
+12,programing,SQL,80,active
+13,programing,Struts / Struts2,70,active
+14,programing,Spring4,65,active
+15,programing,d3js,60,active
+16,programing,HTML / HTML5,70,active
+17,programing,ExtJs,60,active

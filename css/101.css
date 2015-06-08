@@ -131,3 +131,37 @@ h1.contentTitle{
     text-align: center;
 }
 
+
+
+.skill{
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+.skill .name{
+    padding-top: 2em;
+}
+
+.skill .bucket{
+    width: 10em;
+    height: 10em;
+    border-radius: 10em;
+    border: solid;
+    overflow: hidden;
+    /*float: left;*/
+    margin: 1em auto;
+}
+
+.skill .percentage{
+    float: left;
+    z-index: 999;
+    margin: 4em;
+}
+
+.skill .bucket .water{
+    width:10em;
+    /*height: 1em;*/
+    /*margin-top: 4em;*/
+    background:rgb(12, 205, 205);
+}

@@ -30,6 +30,7 @@ function registerOnClick(){
 }
 var CSV_FILES={
 	webDesigns:"./data/webDesigns.csv",
+	skills:"./data/skills.csv",
 	experience:"./data/experiences.csv"
 }
 
@@ -37,7 +38,7 @@ function openData(url){
 	window.open(url);
 }
 
-function initial(error, rows,experiences){
+function initial(error, rows,experiences,skills){
 	console.log('data done',arguments);
 	var count=rows.length;
 	var eachRowCellCount=2;
@@ -69,6 +70,9 @@ function initial(error, rows,experiences){
 	var timeLine=new TimeLine("timeLine");
 	timeLine.appendContent(experiences);
 
+	var bucket=new Bucket("buckets");
+	bucket.appendContent(skills);
+
 	initialMenuScroll();
 }
 
@@ -87,5 +91,45 @@ $(document).ready(function(){
 	queue()
 		.defer(d3.csv,CSV_FILES.webDesigns,eachRowCallBack)
 		.defer(d3.csv,CSV_FILES.experience,eachRowCallBack)
+		.defer(d3.csv,CSV_FILES.skills,eachRowCallBack)
 		.await(initial);
 });
+
+
+
+
+
+/**
+ * Created by Johnson on 2015/6/7.
+ */
+function Bucket(jQuerySelector){
+	var bucketHeight=10;
+	var me=this;
+	var $bucket;//An jQuery Object
+	//new function means will be execute in the beginning of instance been initialized
+	this.constructor= new function(){
+		//console.log('constructor',jQuerySelector);
+		$bucket=$("#"+jQuerySelector).length!=0?$("#"+jQuerySelector):
+			$("."+jQuerySelector).length!=0?$("."+jQuerySelector):jQuerySelector;
+	};
+
+	//function means would be execute when function was called by instance
+	this.appendContent=function(dataList){
+		for(var i=0;i<dataList.length;i++){
+			var row=dataList[i];
+			var rowHml="";
+			var height=parseInt(row.percentage)*bucketHeight/100;
+			var marginTop=bucketHeight-height;
+			rowHml+='<div class="skill col-sm-4">';
+			rowHml+='   <div class="name">'+row.name+'</div>';
+			rowHml+='	<div class="bucket">';
+			rowHml+='   	<div class="percentage">'+row.percentage+'%</div>';
+			rowHml+='   	<div class="water" style="height:'+height+'em;margin-top:'+marginTop+'em;"></div>';
+			rowHml+='	</div>';
+			rowHml+='</div>';
+			$bucket.append(rowHml);
+		}
+	};
+
+	return this;
+};

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Time Line Test--Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+
+    <!-- Optional theme -->
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">-->
+    <link rel="stylesheet" href="./js/bootstrap/css/bootstrap.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+    <style type="text/css">
+      .bucket{
+        width: 5em;
+        border: solid;
+        height: 5em;
+        border-radius: 5em;
+        overflow: hidden;
+      }
+      .bucket .water{
+        width:5em;
+        height: 1em;
+        margin-top: 4em;
+        background:aqua;
+      }
+
+      /*div.waterCap:before{*/
+        /*content:"";*/
+        /*position:absolute;*/
+        /*width:6em;*/
+        /*height:6em;*/
+        /*background:#0ce;*/
+        /*z-index: -1;*/
+      /*}*/
+    </style>
+  <body>
+  <script src="./js/ieAdaptor.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="./js/bootstrap/js/bootstrap.min.js"></script>
+  <script src="./js/d3/d3.min.js" charset="utf-8"></script>
+  <script src="./js/d3/queue.min.js" charset="utf-8"></script>
+  <script src="./fLibs/comm/comm.js"></script>
+  <script src="./fLibs/time-line/time-lime.js"></script>
+  <!-- Fixed navbar -->
+  <div class="container">
+    <h1 style="text-align: center;">
+      Time Line Test!!
+    </h1>
+  </div>
+
+  <div class="container">
+    <div class="timeLine">
+      <!-- js append content -->
+      11
+      <div class="bucket">
+        <div class="water"></div>
+      </div>
+      22
+    </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  </body>
+  <script type="text/javascript">
+    var dataList=[
+      {"time":"2015/01/01","title":"董卓的橫暴","content":"内政・計略・外交・探索などに関連。知力トップは諸葛亮の100、続いて司馬懿・張昭・龐統の98。後のシリーズでは知力と政治力に分かれていく。その武将と同じ国にその武将より知力が2以上高い武将がいる場合に限り、武将に書物を施すことで知力を1上昇させられる。なお90以上まで上昇させた武将は軍師としてコマンド実行時に助言をしてくれる。知力が高いほど助言が正確で、知力100の軍師の助言は100%正確であり、98の軍師の助言もほぼ正確である。だが、95以下になると助言に嘘が目立ちはじめ、助言をしてくれる最低値の知力90ではほとんどあてにならない。\nまた1つの国に軍師が2人以上いた場合、最も知力が高い軍師が助言を行う。軍師がいない国の場合は、君主がいる国に軍師がいる場合は代わって助言をしてくれる。"}
+      ,{"time":"2015/02/01","title":"曹操的雄飛","content":"軍事全般に関連。武力トップは呂布の100、続いて関羽・張飛・趙雲の99。後のシリーズでは武力と統率力に分かれていく。武力は戦場で敵武将の部隊を全滅させた武将が3上昇（君主の部隊を全滅させた場合は10上昇）[4]するため、比較的成長させやすい能力である。なお戦闘中に敵に捕まった武将は武力が3下降する。"}
+      ,{"time":"2015/03/01","title":"劉備的雌伏","content":"武将の忠誠および民忠誠度（民忠）の上昇・人材登用などに関連。カリスマトップは曹操の100。後のシリーズでの魅力にあたる。君主のみ上昇・下降が可能で、施しコマンドで民に5000以上の米を施しなおかつ米の残りが100未満になったときに5上昇する[5]。また、略奪コマンドの実行で10下降するほか、他国からの外交の使者を斬る、外交コマンドの婚姻に失敗する、娘を嫁に出している君主の国に攻め込む、といったことによっても下降する。カリスマは君主にとっては人材登用において特に重要な能力であるためか君主とその血縁の武将は軒並み90以上の数値に設定されている。"}
+      ,{"time":"2015/04/01","title":"諸葛亮登場","content":"Chuck Blazer, a former FIFA executive committee member, admits he and other officials took bribes ahead of the 1998 and 2010 World Cups, newly released court records show."}
+      ,{"time":"2015/05/01","title":"関羽的奮戦","content":"His critically savaged movie, \"Aloha,\" performed poorly in its first weekend in theaters, collecting just $10.5 million despite a shiny pedigree and a star-studded cast. And now he's apologizing for what critics are calling the culturally insensitive casting of actress Emma Stone as a part-Asian character."}
+      ,{"time":"2015/06/01","title":"三國的鼎立","content":"The Allison Ng character in the film is a young Air Force pilot in Hawaii with a father who is half Chinese. Ng is proud to be one-quarter Hawaiian, a fact she repeats to almost everyone she encounters."}
+    ];
+    $(document).ready(function(){
+    });
+  </script>
+</html>
