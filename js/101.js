@@ -103,7 +103,9 @@ $(document).ready(function(){
  * Created by Johnson on 2015/6/7.
  */
 function Bucket(jQuerySelector){
-	var bucketHeight=10;
+	console.log('width',$(window).width());
+	var width=$(window).width();
+	var bucketHeight=width<776?6:10;
 	var me=this;
 	var $bucket;//An jQuery Object
 	//new function means will be execute in the beginning of instance been initialized
@@ -120,7 +122,7 @@ function Bucket(jQuerySelector){
 			var rowHml="";
 			var height=parseInt(row.percentage)*bucketHeight/100;
 			var marginTop=bucketHeight-height;
-			rowHml+='<div class="skill col-sm-4">';
+			rowHml+='<div class="skill col-sm-4 col-xs-6">';
 			rowHml+='   <div class="name">'+row.name+'</div>';
 			rowHml+='	<div class="bucket">';
 			rowHml+='   	<div class="percentage">'+row.percentage+'%</div>';
@@ -131,5 +133,5 @@ function Bucket(jQuerySelector){
 		}
 	};
 
-	return this;
+	return me;
 };
