@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>test</h1>
+<input type="button" value="open" onclick="test()"/>
+<script>
+    var timer;
+    var counter=10;
+    var subWin;
+    function test(){
+        timer=setInterval(checkTime,1000);
+        subWin = window.open("", "MsgWindow", "width=200, height=100");
+        subWin.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
+    }
+
+    function checkTime(){
+        console.log('time...'+counter,new Date());
+        counter--;
+        if(counter==2){
+            alert('Time is running out!!');
+        }else if(counter<0){
+            clearInterval(timer);
+        }
+    }
+</script>
+</body>
+</html>
