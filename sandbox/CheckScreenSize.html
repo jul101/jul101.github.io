@@ -7,6 +7,7 @@
             integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 </head>
 <body>
+<span id="testFont">A Sample Text</span>
 <div id="display"></div>
 
 </body>
@@ -21,6 +22,13 @@
         log('windHeight:' + windHeight);
         log('document:' + $(document).width() + "," + $(document).height());
         log('screen:' + screen.width + "," + screen.height);
+
+        var el = document.getElementById('testFont');
+        var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+        var fontSize = parseFloat(style);
+        // now you have a proper float for the font size (yes, it can be a float, not just an integer)
+        el.style.fontSize = (fontSize + 1) + 'px';
+        log('testFont.fontSize:' + fontSize);
     });
 </script>
 </html>
