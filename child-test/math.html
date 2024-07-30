@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>隨機負整數算式</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f0f0f0;
+		}
+		.equation {
+			font-size: 2em;
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			margin-bottom: 20px;
+		}
+		.input-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.input-container input {
+			font-size: 1em;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+		.input-container button {
+			font-size: 1em;
+			padding: 10px;
+		}
+		.result {
+			font-size: 1.5em;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="equation" id="equation"></div>
+	<div class="input-container">
+		<input type="number" id="answer" placeholder="輸入答案">
+		<button onclick="checkAnswer()">提交答案</button>
+	</div>
+	<div class="result" id="result"></div>
+
+	<script>
+		let correctAnswer;
+
+		function getRandomNegativeInteger() {
+			return -Math.floor(Math.random() * 100) - 1;
+		}
+
+		function getRandomOperator() {
+			const operators = ['+', '-'];
+			return operators[Math.floor(Math.random() * operators.length)];
+		}
+
+		function formatNumber(num) {
+			return num < 0 ? `(${num})` : num;
+		}
+
+		function generateEquation() {
+			const num1 = getRandomNegativeInteger();
+			const num2 = getRandomNegativeInteger();
+			const operator = getRandomOperator();
+			correctAnswer = operator === '+' ? num1 + num2 : num1 - num2;
+			return `${formatNumber(num1)} ${operator} ${formatNumber(num2)}`;
+		}
+
+		function checkAnswer() {
+			const userAnswer = parseInt(document.getElementById('answer').value, 10);
+			const resultElement = document.getElementById('result');
+			if (userAnswer === correctAnswer) {
+				resultElement.innerText = '答案正確！';
+				resultElement.style.color = 'green';
+			} else {
+				resultElement.innerText = '答案錯誤，請再試一次。';
+				resultElement.style.color = 'red';
+			}
+		}
+
+		document.getElementById('answer').addEventListener('keydown', function(event) {
+			if (event.key === 'Enter') {
+				checkAnswer();
+			}
+		});
+
+		document.getElementById('equation').innerText = generateEquation();
+	</script>
+</body>
+</html>
